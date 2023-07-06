@@ -6,9 +6,9 @@ const containerEl = document.querySelector('.container');
 const textInputEl = document.querySelector('#text-input');
 
 // Settings
-const fontName = 'Verdana';
-const textureFontSize = 120;
-const fontScaleFactor = .07;
+const fontName = 'aw-conqueror-didot';
+const textureFontSize = 200;
+const fontScaleFactor = .06;
 
 // We need to keep the style of editable <div> (hidden inout field) and canvas
 textInputEl.style.fontSize = textureFontSize + 'px';
@@ -328,7 +328,7 @@ function recreateInstancedMesh() {
     scene.add(instancedMesh);
 
     instancedMesh.position.x = -.5 * stringBox.wScene;
-    instancedMesh.position.y = -.6 * stringBox.hScene;
+    instancedMesh.position.y = -.55 * stringBox.hScene;
 }
 
 function updateParticlesMatrices() {
@@ -351,7 +351,7 @@ function updateParticlesMatrices() {
 
 function makeTextFitScreen() {
     const fov = camera.fov * (Math.PI / 180);
-    const fovH = 2 * Math.atan(Math.tan(fov / 2) * camera.aspect);
+    const fovH = 2.3 * Math.atan(Math.tan(fov / 2) * camera.aspect);
     const dx = Math.abs(.7 * stringBox.wScene / Math.tan(.5 * fovH));
     const dy = Math.abs(.6 * stringBox.hScene / Math.tan(.5 * fov));
     const factor = Math.max(dx, dy) / camera.position.length();
